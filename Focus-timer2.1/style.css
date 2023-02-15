@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f5f3f3;
+  --bg-dark: #121214;
+  --bg-card: #e1e1e6;
+  --btn-on: hsl(194, 100%, 63%);
+  --bg-card-active: #02799d;
+  --text-color: #323238;
+  --input-color: #323238;
+
+  --elements-darkmode: #c4c4cc;
+
+  --inner-card-active: #ffffff;
+
+  --shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  --shadow-darkmode: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.315));
+
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--text-color);
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: calc(100% - 5vh) 1vh;
+  
+  font-family: 'Roboto', sans-serif;
+  
+  background-color: var(--bg-color);
+  transition: background 0.5s linear, color 0.5s linear;
+
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+#theme {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+
+#theme svg {
+  cursor: pointer;
+  filter: var(--shadow);
+}
+
+.dark {
+  background-color: var(--bg-dark);
+}
+
+.dark #timer,
+.dark #controls svg path,
+.dark #theme svg path {
+  color: var(--elements-darkmode);
+  fill: var(--elements-darkmode);
+}
+
+.dark #timer,
+.dark #controls,
+.dark #theme {
+  filter: var(--shadow-darkmode);
+}
+
+.dark #controls:active > svg path {
+  fill: var(--btn-on);
+}
+
+.dark .card01,
+.dark .card02,
+.dark .card03,
+.dark .card04 {
+  filter: var(--shadow-darkmode);
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+#timer {
+  font-size: 12.6rem;
+
+  justify-content: right;
+
+  display: flex;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  gap: 4rem;
+
+  margin-top: 15.0rem;
+}
+
+#timer, #controls, #cards {
+  position: absolute;
+  width: 32.1rem;
+  height: 21.3rem;
+  left: 23.3rem;
+  top: 18.4rem;
+  
+  padding-top: 10rem;
+  padding-left: 50.0rem;
+}
+
+#cards {
+  width: 308px;
+  height: 336px;
+  left: 400px;
+  top: 150px;
+
+  gap: 3.2rem;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  grid-template-areas: 
+  'A B'
+  'C D';
+}
+
+.card01,
+.card02,
+.card03,
+.card04 {
+  position: relative;
+  width: 13.8rem;
+  height: 15.2rem;
+
+  background-color: var(--bg-card);
+  filter: var(--shadow);
+
+  border-radius: 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 4.7rem 4.8rem;
+}
+
+.card-active {
+  background-color: var(--bg-card-active);
+  transition: 0.5s;
+}
+
+.card-active > svg path {
+  fill: var(--inner-card-active);
+  transition: 0.5s;
+}
+
+#cards div:nth-child(1) {
+  grid-area: A;
+}
+
+#cards div:nth-child(2) {
+  grid-area: B;
+}
+
+#cards div:nth-child(3) {
+  grid-area: C;
+}
+
+#cards div:nth-child(4) {
+  grid-area: D;
+}
+
+
+
+
