@@ -1,4 +1,4 @@
-# Focus-timer-dark-modefocus-timer-dark
+# Focus-timer-dark
 ✅ variáveis no CSS
 
 ✅ propriedade clamp
